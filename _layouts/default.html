@@ -2,13 +2,18 @@
 <html>
 {% include head.html %}
   <body>
+	<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+      </script>
+      <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <div class="content" id="header">
       {% include header.html %}
     </div>
     <div class="content" id="main-content">
       <div class="content-wrapper">
         {{ content }}
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       </div>
     </div>
     {% include footer.html %}
