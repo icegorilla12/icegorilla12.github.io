@@ -18,14 +18,8 @@ contact:
     icon: fa-github
   - link: https://twitter.com/atharvashuklaa
     icon: fa-twitter
-# GitHub Repo for your site
-issue_report:
-  github: crispgm/minimal
 # Google Analytics
-google_analytics: UA-50708664-1
-# Disqus
-disqus:
-  shortname: crispgm
+google_analytics: 
 # Exclusion
 exclude:
   - Rakefile
