@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+  <body>
+    <div class="content" id="header">
+      {% include header.html %}
+    </div>
+    <div class="content" id="main-content">
+      <div class="content-wrapper">
+        {{ content }}
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      </div>
+    </div>
+    {% include footer.html %}
+    {% include syntax_highlight.html %}
+    {% include disqus.html %}
+    {% include google_analytics.html %}
+  </body>
+</html>

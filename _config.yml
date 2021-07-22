@@ -1,0 +1,38 @@
+# Site settings
+title: Atharva Shukla
+author: Atharva Shukla
+description: "Trying out stuff"
+encoding: utf-8
+markdown: kramdown
+baseurl: 
+permalink: /:title/
+# Menu
+menu:
+  - archive.md
+  - about.md
+# Contact Icons
+contact:
+  - link: mailto:ashukla@ph.iitr.ac.in
+    icon: fa-envelope-o
+  - link: https://github.com/icegorilla12
+    icon: fa-github
+  - link: https://twitter.com/atharvashuklaa
+    icon: fa-twitter
+# GitHub Repo for your site
+issue_report:
+  github: crispgm/minimal
+# Google Analytics
+google_analytics: UA-50708664-1
+# Disqus
+disqus:
+  shortname: crispgm
+# Exclusion
+exclude:
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - jekyll-crisp-minimal-theme.gemspec
+  - screenshot.jpg
+  - /docs
