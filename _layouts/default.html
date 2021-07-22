@@ -2,12 +2,11 @@
 <html>
 {% include head.html %}
   <body>
-	<script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-        TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-      </script>
-      <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+	</script>
     <div class="content" id="header">
       {% include header.html %}
     </div>
@@ -22,3 +21,4 @@
     {% include google_analytics.html %}
   </body>
 </html>
+
