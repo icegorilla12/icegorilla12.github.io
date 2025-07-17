@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atharva Shukla - Publications</title>
+        <link rel="stylesheet" href="./resources/css/index.css">
+        <link rel="stylesheet" href="./resources/css/publications.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="./home.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="./blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./interests.html">More</a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area">
+            <section class="publications-intro">
+                <h1 class="page-title">Publications</h1>
+                <hr class="section-divider"> 
+                <p class="page-description">Below is a list of my research publications and preprints. To visit my google scholar, click <a href="https://scholar.google.com/citations?user=KRwEKHcAAAAJ&hl=en" style="text-decoration: underline;"> here.</a></p>
+            </section>
+
+
+            <section class="publication-list">
+                <div class="publication-item">
+                    <h3 class="publication-title">Superposing compass states for asymptotic isotropic sub-Planck phase-space sensitivity</h3>
+                    <p class="publication-authors">
+                        Atharva Shukla, <strong>Barry Sanders</strong>
+                    </p>
+                    <p class="publication-details">
+                        <span class="publication-journal">Physical Review A </span>, 108 (4), 043719 (2023)
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2306.13182" target="_blank" class="publication-link-button">arXiv</a>
+                        <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.108.043719" target="_blank" class="publication-link-button">Journal</a>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <h3 class="publication-title">A scalable crystal representation for reverse engineering of novel inorganic materials using deep generative models</h3>
+                    <p class="publication-authors">
+                        <strong>Rochan Bajpai</strong>, Atharva Shukla , <strong>Janish Kumar, Abhishek Tewari</strong>
+                    </p>
+                    <p class="publication-details">
+                        <span class="publication-journal">Computational Materials Science </span>,230, 112525 (2023)
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/641b37052bfb3dc25130e17d/original/a-scalable-crystal-representation-for-reverse-engineering-of-novel-inorganic-materials-using-deep-generative-models.pdf" target="_blank" class="publication-link-button">chemrXiv</a>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0927025623005190" target="_blank" class="publication-link-button">Journal</a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+    </footer>
+    </body>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atharva Shukla - Contact</title>
+        <link rel="stylesheet" href="./resources/css/index.css"> 
+        <link rel="stylesheet" href="./resources/css/contact.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="./home.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="./blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                  <p><a href="./interests.html"> More </a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area">
+            <section class="contact-intro">
+                <h1 class="page-title">Get In Touch</h1>
+                <hr class="section-divider">
+                <p class="page-description">
+                   Free for a chat.
+                </p>
+            </section>
+
+            <section class="contact-info-section">
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope contact-icon"></i> 
+                    <h3 class="contact-item-title">Email</h3>
+                    <p class="contact-item-details">
+                        <a href="mailto:ashukla@ph.iitr.ac.in=">ashukla@ph.iitr.ac.in</a> 
+                    </p>
+                </div>
+
+                <div class="contact-info-item">
+                    <i class="fab fa-linkedin contact-icon"></i> 
+                    <h3 class="contact-item-title">LinkedIn</h3>
+                    <p class="contact-item-details">
+                        <a href="https://www.linkedin.com/in/atharva-shukla-83270716a/" target="_blank">Atharva Shukla</a> 
+                    </p>
+                </div>
+
+                <div class="contact-info-item">
+                    <i class="fab fa-github contact-icon"></i> 
+                    <h3 class="contact-item-title">GitHub</h3>
+                    <p class="contact-item-details">
+                        <a href="https://github.com/icegorilla12" target="_blank">icegorilla12</a>
+                    </p>
+                </div>
+
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <h3 class="contact-item-title">Location</h3>
+                    <p class="contact-item-details">
+                        Faridabad, Haryana, IN
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+
+    </body>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

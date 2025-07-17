@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atharva Shukla - Interests</title>
+        <link rel="stylesheet" href="./resources/css/index.css">
+        <link rel="stylesheet" href="./resources/css/interests.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="./home.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="./blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./interests.html">More</a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area interests-page">
+
+            <section class="interests-full-sections"> 
+
+                <a href="./listening.html" class="interest-visual-section" style="background-image: url('.\\resources\\css\\images\\ruab_cover.jpeg');">
+                    <div class="interest-content-overlay">
+                        <i class="fas fa-headphones-alt interest-icon"></i>
+                        <h2 class="interest-card-title">Listening To</h2>
+                    </div>
+                </a>
+
+                <a href="./watching.html" class="interest-visual-section" style="background-image: url('\\resources\\css\\images\\sonatine.webp');">
+                    <div class="interest-content-overlay">
+                        <i class="fas fa-film interest-icon"></i>
+                        <h2 class="interest-card-title">Watching</h2>
+                    </div>
+                </a>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+
+    </body>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

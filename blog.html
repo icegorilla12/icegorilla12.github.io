@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atharva Shukla - Blog</title>
+        <link rel="stylesheet" href="./resources/css/index.css">
+        <link rel="stylesheet" href="./resources/css/blog.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="./home.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="./blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./interests.html"> More </a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area">
+            <section class="blog-intro">
+                <h1 class="page-title"> Blog</h1>
+                <hr class="section-divider">
+            </section>
+
+            <section class="blog-posts-list">
+                <article class="blog-post-card">
+                    <h2 class="blog-post-title">
+                        <a href="./blog/post-1-title.html">Un-Expected Threat</a>
+                    </h2>
+                    <p class="blog-post-meta">
+                        <span class="post-date">July 22, 2021</span> | <span class="post-category">Football Analytics</span>
+                    </p>
+                    <p class="blog-post-summary">
+                        I try to quantify all available passing options and find the best one. Based on this, I provide a metric to evaluate the off-ball movements of players.
+                    </p>
+                    <a href="./posts/post.html" class="read-more-button">Read More &rarr;</a>
+                </article>
+
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+
+    </body>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

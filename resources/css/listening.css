@@ -1,0 +1,215 @@
+/* --- Page Specific Styles: Listening To --- */
+p{
+    color:beige;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.menu-item a:hover {
+    color: beige;
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    color: beige;
+    text-decoration: none;
+}
+
+:root {
+    /* ... your other color variables ... */
+    /* Adjust the alpha (last) value of this rgba color */
+    --global-bg-image-opacity: rgba(0, 0, 0, 0.8); /* Increased from 0.2 to 0.5 as an example */
+}
+
+body{
+    background-image: url('.//images//ruab_cover.jpeg'); /* <<< REPLACE WITH YOUR IMAGE PATH */
+    background-repeat: repeat; /* This is the key property for repetition */
+    background-size: auto; /* Default for repetition, or specify size if needed */
+    background-position: 0 0; /* Starts tiling from top-left */
+    background-attachment: scroll; /* Image scrolls with content (default) */
+    position: relative; /* Needed for the ::before overlay */
+    z-index: 0; /* Ensure body is at the base layer */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-bg-image-opacity); /* This is the overlay */
+    z-index: -1;
+}
+
+.listening-intro {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px; /* Consistent with other page titles */
+    font-weight: 700;
+    color: var(--text-dark-grey);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.main-content-area { /* Wrapper for all content below header */
+    padding: 20px 20px; /* Consistent padding for content sections */
+    max-width: (100%-100px); /* Limit content width for readability */
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-weight: bold;
+    z-index: 0;
+}
+/* --- Spotify Embed Section --- */
+.spotify-embed-section {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    background-color: gray;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border: 3px solid black;
+    text-align: left; /* Ensure text aligns left within this section */
+    width:100%;
+}
+
+.section-subtitle { /* For subheadings like "Featured Album" */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--primary-accent); /* Accent color for subtitles */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.spotify-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark-grey);
+    margin-bottom: 30px;
+}
+
+.spotify-player-container {
+    max-width: 1000px; /* Limit the player width for better aesthetics */
+    margin: 0 auto 30px auto; /* Center the player and add bottom margin */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a shadow to the player itself */
+    border-radius: 15px; /* Match iframe border-radius */
+    overflow: hidden; /* Ensure shadow/border-radius apply correctly */
+    border: 1px solid black;
+}
+
+.spotify-player-container iframe {
+    display: block; /* Ensure iframe behaves like a block element */
+}
+
+
+
+.spotify-call-to-action {
+    font-size: 16px;
+    color: var(--footer-text); /* Lighter text for call to action */
+    text-align: center; /* Center the call to action text */
+    margin-top: 20px;
+}
+
+
+.track-stack-section {
+    margin-top: 60px; /* Space from the full-width divider */
+    margin-bottom: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: left;
+    width:100%;
+}
+
+
+
+.track-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.track-item {
+    flex: 1 1 300px;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.track-item iframe {
+    display: block;
+    width: 100%;
+    height: 152px;
+}
+
+
+/* --- Responsive Adjustments for Listening Page --- */
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 45px;
+    }
+    .listening-intro + .section-divider {
+        margin-top: 15px;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+    .page-description {
+        font-size: 18px;
+    }
+    .spotify-embed-section,
+    .listening-thoughts-section {
+        padding: 25px;
+    }
+    .section-subtitle {
+        font-size: 28px;
+    }
+    .spotify-description {
+        font-size: 17px;
+    }
+    .spotify-player-container {
+        max-width: 100%; /* Allow player to take full width on smaller screens */
+    }
+    .spotify-call-to-action {
+        font-size: 15px;
+    }
+    .listening-thoughts-section p,
+    .listening-thoughts-section ul {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 38px;
+    }
+    .spotify-embed-section,
+    .listening-thoughts-section {
+        padding: 20px;
+    }
+    .section-subtitle {
+        font-size: 24px;
+    }
+    .spotify-description {
+        font-size: 16px;
+    }
+    .spotify-player-container {
+        max-width: 100%;
+        height: auto; /* Let height adjust for smaller screens */
+    }
+    .spotify-call-to-action {
+        font-size: 14px;
+    }
+    .listening-thoughts-section p,
+    .listening-thoughts-section ul {
+        font-size: 16px;
+    }
+}
+

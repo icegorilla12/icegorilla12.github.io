@@ -1,0 +1,251 @@
+/* --- Page Specific Styles: Contact --- */
+
+body{
+    background-image: url('.//images//myimage.jpg'); /* Corrected path: single slash */
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 0 0;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 0;
+}
+body::before { /* Make sure the overlay is defined if you want it */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.32); /* Example overlay color/opacity */
+    z-index: -1;
+    padding-bottom: 10px;
+}
+
+.contact-intro {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px; /* Consistent with other page titles */
+    font-weight: 700;
+    color: var(--text-dark-grey);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-intro + .section-divider {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 80%; /* Wider divider for contact page intro */
+}
+
+.page-description {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-dark-grey);
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+/* --- Contact Information Section --- */
+.contact-info-section {
+    display: grid; /* Use CSS Grid for a nice, responsive layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px min width for items */
+    gap: 30px; /* Space between grid items */
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.contact-info-item {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid var(--secondary-support);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 48px; /* Large icons */
+    color: var(--primary-accent); /* Accent color for icons */
+    margin-bottom: 15px;
+}
+
+.contact-item-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-dark-grey);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-item-details {
+    font-size: 18px;
+    color: var(--text-dark-grey);
+    line-height: 1.5;
+}
+
+.contact-item-details a {
+    color: var(--primary-accent); /* Link color in contact details */
+    text-decoration: none;
+}
+
+.contact-item-details a:hover {
+    text-decoration: underline;
+}
+
+/* --- Contact Form Section --- */
+.contact-form-section {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.contact-form-section .section-title { /* Target the H2 within this section */
+    font-size: 38px; /* Slightly smaller than main page title */
+    margin-bottom: 40px;
+    color: var(--text-dark-grey);
+    display: inline-block; 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border: 1px solid var(--secondary-support);
+    max-width: 600px; /* Limit form width for better usability */
+    margin: 0 auto; /* Center the form */
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Make labels appear above inputs */
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-dark-grey);
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-support);
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--text-dark-grey);
+    box-sizing: border-box; /* Include padding/border in width */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-accent); /* Accent color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2); /* Subtle glow */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+}
+
+.submit-button {
+    display: block; /* Make button full width */
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--primary-accent); /* Accent color for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- Responsive Adjustments for Contact Page --- */
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 45px;
+    }
+    .contact-info-section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 20px;
+    }
+    .contact-info-item {
+        padding: 25px;
+    }
+    .contact-icon {
+        font-size: 40px;
+    }
+    .contact-item-title {
+        font-size: 22px;
+    }
+    .contact-item-details {
+        font-size: 17px;
+    }
+    .contact-form-section .section-title {
+        font-size: 32px;
+    }
+    .contact-form {
+        padding: 25px;
+    }
+    .form-group label {
+        font-size: 16px;
+    }
+    .form-group input, .form-group textarea {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .submit-button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 38px;
+    }
+    .contact-intro + .section-divider {
+        width: 95%;
+    }
+    .contact-info-section {
+        grid-template-columns: 1fr; /* Stack items on very small screens */
+        gap: 25px;
+    }
+    .contact-info-item {
+        padding: 20px;
+    }
+    .contact-form-section .section-title {
+        font-size: 28px;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+}

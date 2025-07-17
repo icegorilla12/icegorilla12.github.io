@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listening To</title>
+        <link rel="stylesheet" href="./resources/css/index.css"> 
+        <link rel="stylesheet" href="./resources/css/listening.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="./home.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="./blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="./interests.html">More</a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area">
+            <section class="spotify-embed-section" style="background-image: url('.//resources//css//images//dc2.1.jpeg');">
+                <div class="spotify-player-container" >
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6cojhL5vnV2GCg3RaZz5bM?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </section>
+            <section class="spotify-embed-section" style="background-image: url('.//resources//css//images//naatyaalaapika.jpeg');">
+                <div class="spotify-player-container" >
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0LkJ4ivAYCZeMJnhDFQs3i?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                </div>
+                </div>
+            </section>
+            <section class="spotify-embed-section" style="background-image: url('.//resources//css//images//granth.jpeg');">
+                <div class="spotify-player-container" >
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1OD9hYOFdULDNPQPjM3CnM?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                </div>
+            </section> 
+
+            <section class="track-stack-section">
+                <div class="track-grid-container">
+                    <div class="track-item">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5xweKOcZKpHHb94skkd82G?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="track-item">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0bbaUZwGeE28lKMKDn51Wf?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="track-item">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4XrmCE50Q5vw6jYku28SEI?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="track-item">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5jn3O9btGzRwKiXR6P4qyU?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+
+    </body>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

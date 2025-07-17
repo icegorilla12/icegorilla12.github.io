@@ -1,0 +1,194 @@
+/* --- Page Specific Styles: Blog --- */
+
+body{
+    background-image: url('./images/areyou1.jpeg'); /* Corrected path: single slash */
+    background-repeat: repeat;
+    background-size: 500px  auto;
+    background-position: 0 0;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 0;
+}
+body::before { /* Make sure the overlay is defined if you want it */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Example overlay color/opacity */
+    z-index: -1;
+    padding-bottom: 10px;
+}
+
+.blog-intro {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px; /* Consistent with Publications page title size */
+    font-weight: 700;
+    color: var(--text-dark-grey);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Specific styling for the section divider on the blog page */
+.blog-intro + .section-divider { /* Targets the divider immediately after blog-intro */
+    margin-top: 20px; /* Closer to the title */
+    margin-bottom: 50px; /* Space before the blog posts list starts */
+    width: 80%; /* Make it wider for this page */
+}
+
+.page-description {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-dark-grey);
+    max-width: 100%; /* Allow description to span wider width */
+    margin-top: 40px; /* Space after the divider */
+}
+
+.blog-posts-list {
+    margin-top: 50px; /* Space from the divider/description */
+    max-width: 100%; /* Ensures blog posts list takes full width of its parent */
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.blog-post-card {
+    background-color: rgb(244, 244, 237); /* White background for each blog post card */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    padding: 25px;
+    margin-bottom: 40px; /* Space between blog post items */
+    border: 1px solid var(--secondary-support); /* Subtle border */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+.blog-post-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; /* Slightly larger for blog post titles */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.blog-post-title a {
+    color: var(--primary-accent); /* Accent color for the title link */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease-in-out;
+}
+
+.blog-post-title a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.blog-post-meta {
+    font-size: 15px;
+    color: var(--footer-text); /* Lighter grey for meta info */
+    margin-bottom: 15px;
+}
+
+.blog-post-meta .post-category {
+    font-weight: 500;
+    color: var(--primary-accent); /* Accent color for category */
+}
+
+.blog-post-summary {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark-grey);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: transparent; /* Transparent background */
+    color: var(--primary-accent); /* Accent color for text */
+    text-decoration: none;
+    border: 2px solid var(--primary-accent); /* Border in accent color */
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.read-more-button:hover {
+    background-color: var(--primary-accent); /* Fill with accent color on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-2px);
+}
+
+.site-footer{
+  margin-top:100px;
+  margin-bottom:0px;
+}
+
+
+/* --- Responsive Adjustments for Blog Page --- */
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 45px;
+    }
+    .blog-intro + .section-divider {
+        margin-top: 15px;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+    .page-description {
+        font-size: 18px;
+    }
+    .blog-post-card {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .blog-post-title {
+        font-size: 24px;
+    }
+    .blog-post-meta, .blog-post-summary {
+        font-size: 16px;
+    }
+    .read-more-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 38px;
+    }
+    .blog-intro + .section-divider {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        width: 95%;
+    }
+    .page-description {
+        font-size: 16px;
+    }
+    .blog-post-card {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+    .blog-post-title {
+        font-size: 20px;
+    }
+    .blog-post-meta, .blog-post-summary {
+        font-size: 15px;
+    }
+    .read-more-button {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+}

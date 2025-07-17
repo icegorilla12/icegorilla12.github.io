@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watching - Atharva Shukla</title>
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/watching.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="site-title">
+            <p><a href="./home.html">Atharva Shukla</a></p>
+        </div>
+        <nav class="main-nav">
+            <div class="menu-item">
+                <p><a href="./blog.html">Blog</a></p>
+            </div>
+            <div class="menu-item">
+                <p><a href="./publications.html">Publications</a></p>
+            </div>
+            <div class="menu-item">
+                <p><a href="./contact.html">Contact</a></p>
+            </div>
+            <div class="menu-item">
+                <p><a href="./interests.html">More</a></p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content-area" style="margin-top: 33px;">
+        <h1 class="page-title">What I'm Watching</h1>
+
+        <div class="button-container">
+            <a href="https://letterboxd.com/icegorilla12/" target="_blank" class="btn-letterboxd" style="color: white;">
+                Visit My Letterboxd Profile
+            </a>
+        </div>
+
+        <section class="watchlist-section">
+            <h2 class="section-subtitle">A few recent favourites</h2>
+            <ul class="watchlist-grid">
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">The Zone of Interest</p></li>
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">Dogville</p></li>
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">Sinners</p></li>
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">Om Dar-B-Dar</p></li>
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">Petite Maman</p></li>
+                <li><p style="font-weight: 400; color:white; font-weight: 600;">About Time</p></li>
+            </ul>
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

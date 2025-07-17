@@ -1,0 +1,240 @@
+:root {
+    /* Define new color variables */
+    --primary-accent: #0f1e30; /* Deep Navy Blue */
+    --secondary-support: #E8E5E0; /* Warm Light Grey */
+    --text-dark-grey: #0c1014; /* Charcoal Grey */
+    --bg-off-white: #FDFDFD; /* Very Light Beige */
+    --section-divider-color: #000000; /* Can remain similar, or match secondary support */
+    --footer-bg: #DEDEDE;
+    --footer-text: #7F8C8D;
+
+    /* If you're keeping the background image with dark overlay,
+       make sure text on image is white */
+    --body-text-color-on-image: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    background-color: beige;
+    color: var(--text-dark-grey);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6; /* Increased for better readability */
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px; /* Added slight bottom margin for paragraphs */
+    line-height: 1.7; /* Slightly more relaxed line height */
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out; /* Smooth transition for link colors */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-accent);
+}
+
+a:visited {
+    color: inherit;
+}
+
+/* --- Header & Navigation Alignment --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px; /* Top/Bottom padding, Left/Right padding */
+    width: calc(100% - 100px); /* Adjust width for padding */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.site-title {
+    color: var(--primary-accent);
+    font-family: 'Montserrat', sans-serif; /* Montserrat for site title */
+    font-size: 26px; /* Slightly larger for prominence */
+    font-weight: 700; /* Bold */
+}
+
+.site-title a:hover {
+    text-decoration: none;
+    color: var(--primary-accent); /* Keep color consistent on hover */
+}
+
+.main-nav {
+    display: flex;
+    gap: 50px; /* Space between menu items */
+}
+
+.menu-item {
+    font-size: 20px;
+    color: var(--text-dark-grey);
+    font-weight: 700; /* Slightly bolder for menu items */
+}
+
+.menu-item a:hover {
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+.bg-img{
+    background-image: url('./images/whiteboard.jpg');
+    background-size: cover;
+    z-index: 0;
+    position:relative;
+}
+
+.bg-img::before {
+    content: ''; /* Required for pseudo-elements */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(245, 245, 220,0.4); /* Semi-transparent black overlay (50% opacity) */
+    /* Adjust rgba values: (R, G, B, Alpha) - Alpha (opacity) from 0 to 1 */
+}
+
+/* --- Main Content Area Styling --- */
+.main-content-area { /* Wrapper for all content below header */
+    padding: 20px 100px; /* Consistent padding for content sections */
+    max-width: 900px; /* Limit content width for readability */
+    margin-left: 300px; /* Center the content area */
+    margin-right: 300px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-weight: bold;
+    z-index: 0;
+    margin:0 auto;  
+}
+
+.body-content {
+    margin-bottom: 50px; /* More space below intro */
+}
+
+.intro-greeting { /* Specific styling for "Hi! I am Atharva." */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px; /* Larger and more impactful */
+    line-height: 1.2;
+    margin-bottom: 15px; /* Space below greeting */
+    z-index:0;
+    font-weight: bold;
+}
+
+.intro-text { /* Specific styling for the intro paragraph */
+    font-size: 25px; /* Slightly larger for intro text */
+    line-height: 1.7;
+    margin-bottom: 0; /* No extra margin, already handled by body-content bottom margin */
+    font-weight:600;
+    z-index:2;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--section-divider-color); /* Light grey divider */
+    margin: 80px 0; /* More vertical space around divider */
+    width: 100%; /* Shorter width for aesthetic */
+    margin: 0 auto; /* Align with content start */
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for section titles */
+    font-size: 38px; /* Slightly larger and more prominent */
+    font-weight: 700;
+    margin-top: 20px; /* Removed previous large margin, now handled by content area padding */
+    margin-bottom: 20px; /* Space below section title */
+    margin-left: 300px;
+    padding:10px 100px; 
+}
+
+.experience-tabs {  
+    max-width: 800px; /* Keep max width for tabs */
+    margin: 0 auto; /* Align with content start */
+    margin-top: 0px; /* Space above tabs */
+    margin-left: 300px;
+    padding:0px 100px; 
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 15px; /* Slightly more gap between buttons */
+    margin-bottom: 1.5rem; /* More space below buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.tab-button {
+    padding: 0.7rem 1.2rem; /* Slightly more padding for buttons */
+    background: var(--secondary-support);
+    color: var(--text-dark-grey);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-weight: 700; /* Medium weight */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tab-button:hover:not(.active) { /* Hover for non-active buttons */
+    background: var(--primary-accent); /* Teal on hover */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.tab-button.active {
+    background: var(--primary-accent);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow for active tab */
+}
+
+.tab-content {
+    display: none;
+    background: #FFFFFF;
+    padding: 1.5rem; /* More padding inside tab content */
+    border-radius: 8px;
+    border: 1px solid var(--secondary-support); /* Use secondary support for border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
+    font-weight: 500;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for experience titles */
+    color: var(--primary-accent);
+    font-size: 28px; /* Larger heading */
+    font-weight: 600; /* Semi-bold */
+    margin-top: 0;
+    margin-bottom: 0.8rem; /* More space below heading */
+}
+
+.tab-content .date-range { /* Specific styling for date ranges */
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666; /* Slightly lighter grey for dates */
+    margin-bottom: 1.2rem; /* More space below date */
+}
+
+.tab-content ul {
+    list-style-type: disc;
+    margin-left: 25px; /* Slightly more indent */
+    padding-left: 0;
+}
+
+.tab-content li {
+    margin-bottom: 0.8rem; /* More space between list items */
+    line-height: 1.6;
+}
+
+.site-footer{
+  margin-top:100px;
+  margin-bottom:0px;
+}

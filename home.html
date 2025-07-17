@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Atharva Shukla </title>
+        <link rel="stylesheet" href="./resources/css/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="bg-img">
+            <div class="main-header">
+                <div class="site-title">
+                    <p><a href="./home.html"> Atharva Shukla </a></p>
+                </div>
+                <div class="main-nav">
+                    <div class="menu-item">
+                        <p><a href="./blog.html"> Blog </a></p>
+                    </div>
+                    <div class="menu-item">
+                        <p><a href="./publications.html"> Publications </a></p>
+                    </div>
+                    <div class="menu-item">
+                        <p><a href="./contact.html"> Contact </a></p>
+                    </div>
+                    <div class="menu-item">
+                        <p><a href="./interests.html"> More </a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content-area"> 
+                    <p class="intro-greeting">Hi! I am Atharva.</p> 
+                    <p class="intro-text">I graduated from IIT Roorkee with a BS-MS in Physics in 2023. I am an incoming PhD student at Brandeis in the upcoming fall of 2025.</p>
+            </div>
+        </div>
+            <hr class="section-divider"> 
+
+            <div class="section-title">
+                Previously..
+            </div>
+            <div class="experience-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="amex">American Express</button>
+                    <button class="tab-button" data-tab="iisc">IISc Bangalore</button>
+                    <button class="tab-button" data-tab="mitacs">University of Calgary</button>
+                    <button class="tab-button" data-tab="ntu">NTU Singapore</button>
+                </div>
+
+                <div class="tab-content active" id="amex">
+                    <h2>Associate</h2>
+                    <p class="date-range"><strong>July 2023 - July 2025</strong></p> 
+                    <ul>
+                        <li>Part of the product delivery team in RPDS. Worked with REST APIs, Hive, Big Query. Made a lot of friends!</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="iisc">
+                    <h2>Research Assistant</h2>
+                    <p class="date-range"><strong>September 2023 – September 2025</strong></p>
+                    <ul>
+                        <li>Worked with Professor Chandan Dasgupta on the morphology of domains in dense active matter systems. Wrote code to simulate large systems and perform further analysis.</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="mitacs">
+                    <h2>Undergraduate Researcher </h2>
+                    <p class="date-range"><strong>May 2022 - July 2022</strong></p>
+                    <ul>
+                        <li>Worked with Professor Barry Sanders on the theoretical background for a quantum state with sub planck isotropic phase space sensitivity. The math magically worked out. Associated publication <a href="publications.html" style="text-decoration: underline;"> here. </a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="ntu">
+                    <h2>Undergraduate Researcher </h2>
+                    <p class="date-range"><strong>January 2022 - June 2022</strong></p>
+                    <ul>
+                        <li>Worked with Professor Massimo Pica Ciamarra on variations of the Vicsek Model. Wrote code to simulate such systems.</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </body>
+            <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</html>

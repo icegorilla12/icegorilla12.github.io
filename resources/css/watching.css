@@ -1,0 +1,212 @@
+/* --- Page Specific Styles: Watching --- */
+
+/* Ensure text color consistency if main-content-area background changes */
+body{
+    background-image: url('./images/sonatine.webp'); /* Corrected path: single slash */
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 0 0;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 0;
+}
+body::before { /* Make sure the overlay is defined if you want it */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Example overlay color/opacity */
+    z-index: -1;
+}
+
+.main-content-area {
+    color: var(--text-dark-grey); /* Or white if background is dark */
+    /* Remove explicit margin-left from here if you want it centered on screen */
+    /* If you want it aligned with the other content blocks, keep its existing margin/width */
+    margin: 20px auto; /* This centers the content area itself */
+    max-width: 900px; /* Keep consistent width */
+    padding: 20px; /* Keep some padding */
+    box-sizing: border-box;
+    font-weight: bold; /* This seems unusual for a wrapper, check if intended */
+    z-index: 0;
+}
+
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--primary-accent);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title itself */
+}
+
+.watching-intro {
+    margin-bottom: 30px;
+    text-align: left; /* Keep intro text left-aligned */
+}
+
+.page-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark-grey);
+    text-align: center; /* Center this descriptive text as well */
+}
+
+/* --- Letterboxd Profile Link Section (Replaces the Feed) --- */
+/* The styles for this section are generally fine */
+.letterboxd-profile-link-section {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border: 1px solid var(--secondary-support);
+    text-align: left;
+}
+
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--primary-accent);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center; /* Center subtitles too */
+}
+
+.letterboxd-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark-grey);
+    margin-bottom: 30px;
+    text-align: center; /* Center this description */
+}
+
+/* New: Container to center the button */
+.button-container {
+    text-align: center; /* This centers the inline-block button */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-letterboxd {
+    display: inline-block; /* Essential for text-align: center to work on its parent */
+    padding: 15px 100px;
+    background-color: #0f1e30; /* Your primary accent color */
+    color: white !important; /* Force text color to white, overriding inline style for cleaner CSS */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    /* REMOVE the fixed margins that were preventing centering: */
+    /* margin-left: 300px; */
+    /* margin-right: 300px; */
+}
+
+.btn-letterboxd:hover {
+    background-color: #2c2e30;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.letterboxd-tip {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --- Watchlist Section --- */
+.watchlist-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: left;
+}
+
+.watchlist-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark-grey);
+    margin-bottom: 30px;
+}
+
+.watchlist-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.watchlist-grid li {
+    background-color: #0f1e30;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.watchlist-grid li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.watchlist-grid li a {
+    color: var(--text-dark-grey);
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none;
+    border-color: black;
+}
+
+.watchlist-grid li a:hover {
+    color: var(--primary-accent);
+    text-decoration: underline;
+}
+
+
+/* --- Responsive Adjustments for Watching Page --- */
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 45px;
+    }
+    .section-subtitle {
+        font-size: 28px;
+    }
+    .letterboxd-description,
+    .watchlist-description,
+    .watching-thoughts-section p,
+    .watching-thoughts-section li {
+        font-size: 17px;
+    }
+    .btn-letterboxd {
+        padding: 12px 25px; /* Adjust horizontal padding for smaller screens */
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 38px;
+    }
+    .section-subtitle {
+        font-size: 24px;
+    }
+    .btn-letterboxd {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .watchlist-grid {
+        grid-template-columns: 1fr;
+    }
+}
