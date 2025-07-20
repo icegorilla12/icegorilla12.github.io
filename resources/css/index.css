@@ -20,6 +20,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6; /* Increased for better readability */
     padding-bottom: 10px;
+    /* You might have background images on specific pages (listening.css, watching.css).
+       If this body style is intended to be a global fallback, keep it. */
 }
 
 p {
@@ -50,31 +52,37 @@ a:visited {
     justify-content: space-between;
     align-items: center;
     padding: 30px 100px; /* Top/Bottom padding, Left/Right padding */
-    width: calc(100% - 100px); /* Adjust width for padding */
+    width: calc(100% - 200px); /* Adjust width for padding - changed from 100px to 200px as padding is 100px on both sides */
     box-sizing: border-box; /* Include padding in width */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .site-title {
     color: var(--primary-accent);
-    font-family: 'Montserrat', sans-serif; /* Montserrat for site title */
-    font-size: 26px; /* Slightly larger for prominence */
-    font-weight: 700; /* Bold */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    /* Added for responsiveness: */
+    flex-shrink: 0; /* Prevents shrinking on smaller screens */
+    min-width: 150px; /* Ensure title has minimum space */
 }
 
 .site-title a:hover {
     text-decoration: none;
-    color: var(--primary-accent); /* Keep color consistent on hover */
+    color: var(--primary-accent);
 }
 
 .main-nav {
     display: flex;
     gap: 50px; /* Space between menu items */
+    flex-wrap: wrap; /* Allow navigation items to wrap */
+    justify-content: flex-end; /* Align to the right by default */
 }
 
 .menu-item {
     font-size: 20px;
     color: var(--text-dark-grey);
-    font-weight: 700; /* Slightly bolder for menu items */
+    font-weight: 700;
 }
 
 .menu-item a:hover {
@@ -82,124 +90,124 @@ a:visited {
     text-decoration: none;
 }
 
-.bg-img{
+.bg-img {
     background-image: url('./images/whiteboard.jpg');
     background-size: cover;
     z-index: 0;
-    position:relative;
+    position: relative;
 }
 
 .bg-img::before {
-    content: ''; /* Required for pseudo-elements */
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: -1;
-    background-color: rgba(245, 245, 220,0.4); /* Semi-transparent black overlay (50% opacity) */
-    /* Adjust rgba values: (R, G, B, Alpha) - Alpha (opacity) from 0 to 1 */
+    background-color: rgba(245, 245, 220, 0.4);
 }
 
 /* --- Main Content Area Styling --- */
-.main-content-area { /* Wrapper for all content below header */
-    padding: 20px 100px; /* Consistent padding for content sections */
-    max-width: 900px; /* Limit content width for readability */
-    margin-left: 300px; /* Center the content area */
-    margin-right: 300px;
+.main-content-area {
+    padding: 20px 100px;
+    max-width: 900px;
     box-sizing: border-box;
     margin-top: 20px;
     font-weight: bold;
     z-index: 0;
-    margin:0 auto;  
+    margin: 0 auto; /* This centers the content area on the page */
 }
 
 .body-content {
-    margin-bottom: 50px; /* More space below intro */
+    margin-bottom: 50px;
 }
 
-.intro-greeting { /* Specific styling for "Hi! I am Atharva." */
+.intro-greeting {
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px; /* Larger and more impactful */
+    font-size: 50px;
     line-height: 1.2;
-    margin-bottom: 15px; /* Space below greeting */
-    z-index:0;
+    margin-bottom: 15px;
+    z-index: 0;
     font-weight: bold;
 }
 
-.intro-text { /* Specific styling for the intro paragraph */
-    font-size: 25px; /* Slightly larger for intro text */
+.intro-text {
+    font-size: 25px;
     line-height: 1.7;
-    margin-bottom: 0; /* No extra margin, already handled by body-content bottom margin */
-    font-weight:600;
-    z-index:2;
+    margin-bottom: 0;
+    font-weight: 600;
+    z-index: 2;
 }
 
 .section-divider {
     border: none;
-    border-top: 1px solid var(--section-divider-color); /* Light grey divider */
-    margin: 80px 0; /* More vertical space around divider */
+    border-top: 1px solid var(--section-divider-color);
+    margin: 80px auto; /* Centered divider with vertical space */
     width: 100%; /* Shorter width for aesthetic */
-    margin: 0 auto; /* Align with content start */
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif; /* Montserrat for section titles */
-    font-size: 38px; /* Slightly larger and more prominent */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
     font-weight: 700;
-    margin-top: 20px; /* Removed previous large margin, now handled by content area padding */
-    margin-bottom: 20px; /* Space below section title */
-    margin-left: 300px;
-    padding:10px 100px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 300px; /* This was for a specific layout, consider removing or adjusting */
+    padding: 10px 100px; /* Padding for the title itself */
+    text-align: center; /* Center for responsiveness */
 }
 
-.experience-tabs {  
-    max-width: 800px; /* Keep max width for tabs */
-    margin: 0 auto; /* Align with content start */
-    margin-top: 0px; /* Space above tabs */
-    margin-left: 300px;
-    padding:0px 100px; 
+.experience-tabs {
+    max-width: 800px;
+    margin: 0 auto; /* Center tabs */
+    margin-top: 0px;
+    /* margin-left: 300px; /* This was for a specific layout, consider removing or adjusting */
+    padding: 0px 100px;
 }
 
 .tab-buttons {
     display: flex;
-    gap: 15px; /* Slightly more gap between buttons */
-    margin-bottom: 1.5rem; /* More space below buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Allows buttons to wrap */
+    justify-content: center; /* Center buttons horizontally */
 }
 
 .tab-button {
-    padding: 0.7rem 1.2rem; /* Slightly more padding for buttons */
+    padding: 0.7rem 1.2rem;
     background: var(--secondary-support);
     color: var(--text-dark-grey);
     border: none;
     cursor: pointer;
-    border-radius: 8px; /* Slightly more rounded corners */
-    font-weight: 700; /* Medium weight */
+    border-radius: 8px;
+    font-weight: 700;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
+    flex-grow: 1; /* Allow buttons to grow to fill space if needed */
+    min-width: 120px; /* Ensure buttons don't get too small */
 }
 
-.tab-button:hover:not(.active) { /* Hover for non-active buttons */
-    background: var(--primary-accent); /* Teal on hover */
+.tab-button:hover:not(.active) {
+    background: var(--primary-accent);
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tab-button.active {
     background: var(--primary-accent);
     color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow for active tab */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .tab-content {
     display: none;
     background: #FFFFFF;
-    padding: 1.5rem; /* More padding inside tab content */
+    padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid var(--secondary-support); /* Use secondary support for border */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
+    border: 1px solid var(--secondary-support);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     font-weight: 500;
 }
 
@@ -208,33 +216,209 @@ a:visited {
 }
 
 .tab-content h2 {
-    font-family: 'Montserrat', sans-serif; /* Montserrat for experience titles */
+    font-family: 'Montserrat', sans-serif;
     color: var(--primary-accent);
-    font-size: 28px; /* Larger heading */
-    font-weight: 600; /* Semi-bold */
+    font-size: 28px;
+    font-weight: 600;
     margin-top: 0;
-    margin-bottom: 0.8rem; /* More space below heading */
+    margin-bottom: 0.8rem;
 }
 
-.tab-content .date-range { /* Specific styling for date ranges */
+.tab-content .date-range {
     font-size: 16px;
     font-weight: 500;
-    color: #666666; /* Slightly lighter grey for dates */
-    margin-bottom: 1.2rem; /* More space below date */
+    color: #666666;
+    margin-bottom: 1.2rem;
 }
 
 .tab-content ul {
     list-style-type: disc;
-    margin-left: 25px; /* Slightly more indent */
+    margin-left: 25px;
     padding-left: 0;
 }
 
 .tab-content li {
-    margin-bottom: 0.8rem; /* More space between list items */
+    margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
-.site-footer{
-  margin-top:100px;
-  margin-bottom:0px;
+.site-footer {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    text-align: center; /* Center footer text */
+    padding: 20px; /* Add some padding to footer */
+    background-color: var(--footer-bg); /* Use defined footer background */
+    color: var(--footer-text); /* Use defined footer text color */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive Adjustments                          */
+/* -------------------------------------------------------------------------- */
+
+/* Large screens (e.g., desktops, larger laptops) */
+@media (min-width: 1200px) {
+    .main-content-area {
+        max-width: 1000px; /* Slightly wider content on very large screens */
+        padding: 20px 100px;
+    }
+    .main-header {
+        padding: 30px 150px; /* More padding on very large screens */
+        width: calc(100% - 300px);
+    }
+}
+
+/* Medium screens (e.g., smaller laptops, large tablets) */
+@media (max-width: 1200px) {
+    .main-header {
+        padding: 20px 50px; /* Reduce header padding */
+        width: calc(100% - 100px);
+    }
+    .main-content-area {
+        padding: 20px 50px; /* Reduce content area padding */
+        max-width: 800px; /* Slightly narrower content */
+    }
+    .site-title {
+        font-size: 24px;
+    }
+    .menu-item {
+        font-size: 18px;
+    }
+    .intro-greeting {
+        font-size: 45px;
+    }
+    .intro-text {
+        font-size: 22px;
+    }
+    .section-title {
+        font-size: 32px;
+        padding: 10px 50px; /* Adjust padding */
+    }
+    .experience-tabs {
+        padding: 0px 50px;
+        max-width: 700px;
+    }
+}
+
+/* Small screens (e.g., tablets in portrait, larger phones) */
+@media (max-width: 900px) {
+    .main-header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align header items to start */
+        padding: 20px 30px; /* Further reduce header padding */
+        width: calc(100% - 60px);
+    }
+    .site-title {
+        margin-bottom: 15px; /* Space between title and nav */
+        font-size: 22px;
+    }
+    .main-nav {
+        width: 100%; /* Make nav take full width */
+        justify-content: space-around; /* Distribute items evenly */
+        gap: 20px; /* Reduce gap between menu items */
+    }
+    .menu-item {
+        font-size: 16px;
+    }
+    .main-content-area {
+        padding: 20px 30px; /* Further reduce content area padding */
+        max-width: 100%; /* Allow content to take full width */
+    }
+    p {
+        font-size: 16px;
+    }
+    .intro-greeting {
+        font-size: 38px;
+    }
+    .intro-text {
+        font-size: 20px;
+    }
+    .section-title {
+        font-size: 28px;
+        padding: 10px 30px; /* Adjust padding */
+    }
+    .experience-tabs {
+        padding: 0px 30px;
+        max-width: 100%;
+    }
+    .tab-buttons {
+        gap: 10px;
+        justify-content: space-around; /* Distribute buttons evenly */
+    }
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 14px;
+        min-width: unset; /* Remove min-width to allow more flexibility */
+        flex-basis: auto; /* Allow items to determine their width based on content */
+    }
+    .tab-content h2 {
+        font-size: 24px;
+    }
+    .tab-content .date-range,
+    .tab-content li {
+        font-size: 15px;
+    }
+}
+
+/* Very small screens (e.g., mobile phones in portrait) */
+@media (max-width: 600px) {
+    .main-header {
+        padding: 15px 15px; /* Minimal header padding */
+        width: calc(100% - 30px);
+    }
+    .site-title {
+        font-size: 20px;
+    }
+    .main-nav {
+        flex-direction: column; /* Stack nav items completely */
+        align-items: flex-start; /* Align nav items to the left */
+        gap: 10px; /* Smaller gap */
+    }
+    .menu-item {
+        font-size: 15px;
+        width: 100%; /* Make each menu item take full width */
+        text-align: center; /* Center text within each stacked menu item */
+    }
+    .menu-item p {
+        margin: 5px 0; /* Adjust vertical spacing for stacked menu items */
+    }
+    .main-content-area {
+        padding: 15px 15px; /* Minimal content area padding */
+    }
+    p {
+        font-size: 15px;
+    }
+    .intro-greeting {
+        font-size: 32px;
+    }
+    .intro-text {
+        font-size: 18px;
+    }
+    .section-title {
+        font-size: 24px;
+        padding: 10px 15px; /* Adjust padding */
+    }
+    .experience-tabs {
+        padding: 0px 15px;
+    }
+    .tab-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 8px;
+    }
+    .tab-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 13px;
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+    }
+    .tab-content h2 {
+        font-size: 20px;
+    }
+    .tab-content .date-range,
+    .tab-content li {
+        font-size: 14px;
+    }
+    .site-footer {
+        padding: 15px;
+        font-size: 14px;
+    }
 }
