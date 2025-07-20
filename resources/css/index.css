@@ -159,6 +159,7 @@ a:visited {
     margin-top: 0px; /* Space above tabs */
     margin-left: 300px;
     padding:0px 100px; 
+    margin-right: 300px;
 }
 
 .tab-buttons {
