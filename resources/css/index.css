@@ -20,8 +20,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6; /* Increased for better readability */
     padding-bottom: 10px;
-    /* You might have background images on specific pages (listening.css, watching.css).
-       If this body style is intended to be a global fallback, keep it. */
 }
 
 p {
@@ -49,39 +47,34 @@ a:visited {
 /* --- Header & Navigation Alignment --- */
 .main-header {
     display: flex;
-    justify-content: space-between; /* Keep title left, nav right */
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 100px;
-    width: calc(100% - 200px); /* Corrected based on 100px padding left+right */
-    box-sizing: border-box;
-    flex-wrap: wrap; 
+    padding: 30px 100px; /* Top/Bottom padding, Left/Right padding */
+    width: calc(100% - 100px); /* Adjust width for padding */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .site-title {
     color: var(--primary-accent);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for site title */
+    font-size: 26px; /* Slightly larger for prominence */
+    font-weight: 700; /* Bold */
 }
 
 .site-title a:hover {
     text-decoration: none;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Keep color consistent on hover */
 }
 
 .main-nav {
     display: flex;
-    gap: 50px;
-    flex-wrap: wrap; /* Allow navigation items to wrap */
-    justify-content: flex-end; /* Keep aligning to the right by default */
-    align-items: center; /* Vertically align menu items */
+    gap: 50px; /* Space between menu items */
 }
 
 .menu-item {
     font-size: 20px;
     color: var(--text-dark-grey);
-    font-weight: 700;
+    font-weight: 700; /* Slightly bolder for menu items */
 }
 
 .menu-item a:hover {
@@ -89,130 +82,124 @@ a:visited {
     text-decoration: none;
 }
 
-.bg-img {
+.bg-img{
     background-image: url('./images/whiteboard.jpg');
     background-size: cover;
     z-index: 0;
-    position: relative;
+    position:relative;
 }
 
 .bg-img::before {
-    content: '';
+    content: ''; /* Required for pseudo-elements */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: -1;
-    background-color: rgba(245, 245, 220, 0.4);
+    background-color: rgba(245, 245, 220,0.4); /* Semi-transparent black overlay (50% opacity) */
+    /* Adjust rgba values: (R, G, B, Alpha) - Alpha (opacity) from 0 to 1 */
 }
 
 /* --- Main Content Area Styling --- */
-.main-content-area {
-    padding: 20px 100px;
-    max-width: 900px;
+.main-content-area { /* Wrapper for all content below header */
+    padding: 20px 100px; /* Consistent padding for content sections */
+    max-width: 900px; /* Limit content width for readability */
+    margin-left: 300px; /* Center the content area */
+    margin-right: 300px;
     box-sizing: border-box;
     margin-top: 20px;
     font-weight: bold;
     z-index: 0;
-    margin: 0 auto; /* This centers the content area on the page */
+    margin:0 auto;  
 }
 
 .body-content {
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* More space below intro */
 }
 
-.intro-greeting {
+.intro-greeting { /* Specific styling for "Hi! I am Atharva." */
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
+    font-size: 50px; /* Larger and more impactful */
     line-height: 1.2;
-    margin-bottom: 15px;
-    z-index: 0;
+    margin-bottom: 15px; /* Space below greeting */
+    z-index:0;
     font-weight: bold;
 }
 
-.intro-text {
-    font-size: 25px;
+.intro-text { /* Specific styling for the intro paragraph */
+    font-size: 25px; /* Slightly larger for intro text */
     line-height: 1.7;
-    margin-bottom: 0;
-    font-weight: 600;
-    z-index: 2;
+    margin-bottom: 0; /* No extra margin, already handled by body-content bottom margin */
+    font-weight:600;
+    z-index:2;
 }
 
 .section-divider {
     border: none;
-    border-top: 1px solid var(--section-divider-color);
-    margin: 80px auto; /* General vertical spacing for most dividers */
-    width: 100%;
-}
-
-/* NEW: Specific style for the divider after the intro */
-.section-divider.intro-divider {
-    margin-top: 30px; /* Reduced top margin, or 0 if you want it flush */
-    margin-bottom: 80px; /* Keep bottom margin if desired for space before next section */
+    border-top: 1px solid var(--section-divider-color); /* Light grey divider */
+    margin: 80px 0; /* More vertical space around divider */
+    width: 100%; /* Shorter width for aesthetic */
+    margin: 0 auto; /* Align with content start */
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 38px;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for section titles */
+    font-size: 38px; /* Slightly larger and more prominent */
     font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    /* margin-left: 300px; /* This was for a specific layout, consider removing or adjusting */
-    padding: 10px 100px; /* Padding for the title itself */
-    text-align: center; /* Center for responsiveness */
+    margin-top: 20px; /* Removed previous large margin, now handled by content area padding */
+    margin-bottom: 20px; /* Space below section title */
+    margin-left: 300px;
+    padding:10px 100px; 
 }
 
-.experience-tabs {
-    max-width: 800px;
-    margin: 0 auto; /* Center tabs */
-    margin-top: 0px;
-    /* margin-left: 300px; /* This was for a specific layout, consider removing or adjusting */
-    padding: 0px 100px;
+.experience-tabs {  
+    max-width: 800px; /* Keep max width for tabs */
+    margin: 0 auto; /* Align with content start */
+    margin-top: 0px; /* Space above tabs */
+    margin-left: 300px;
+    padding:0px 100px; 
 }
 
 .tab-buttons {
     display: flex;
-    gap: 15px;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap; /* Allows buttons to wrap */
-    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Slightly more gap between buttons */
+    margin-bottom: 1.5rem; /* More space below buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 .tab-button {
-    padding: 0.7rem 1.2rem;
+    padding: 0.7rem 1.2rem; /* Slightly more padding for buttons */
     background: var(--secondary-support);
     color: var(--text-dark-grey);
     border: none;
     cursor: pointer;
-    border-radius: 8px;
-    font-weight: 700;
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-weight: 700; /* Medium weight */
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
-    flex-grow: 1; /* Allow buttons to grow to fill space if needed */
-    min-width: 120px; /* Ensure buttons don't get too small */
 }
 
-.tab-button:hover:not(.active) {
-    background: var(--primary-accent);
+.tab-button:hover:not(.active) { /* Hover for non-active buttons */
+    background: var(--primary-accent); /* Teal on hover */
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
 }
 
 .tab-button.active {
     background: var(--primary-accent);
     color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow for active tab */
 }
 
 .tab-content {
     display: none;
     background: #FFFFFF;
-    padding: 1.5rem;
+    padding: 1.5rem; /* More padding inside tab content */
     border-radius: 8px;
-    border: 1px solid var(--secondary-support);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--secondary-support); /* Use secondary support for border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
     font-weight: 500;
 }
 
@@ -221,39 +208,35 @@ a:visited {
 }
 
 .tab-content h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for experience titles */
     color: var(--primary-accent);
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 28px; /* Larger heading */
+    font-weight: 600; /* Semi-bold */
     margin-top: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.8rem; /* More space below heading */
 }
 
-.tab-content .date-range {
+.tab-content .date-range { /* Specific styling for date ranges */
     font-size: 16px;
     font-weight: 500;
-    color: #666666;
-    margin-bottom: 1.2rem;
+    color: #666666; /* Slightly lighter grey for dates */
+    margin-bottom: 1.2rem; /* More space below date */
 }
 
 .tab-content ul {
     list-style-type: disc;
-    margin-left: 25px;
+    margin-left: 25px; /* Slightly more indent */
     padding-left: 0;
 }
 
 .tab-content li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.8rem; /* More space between list items */
     line-height: 1.6;
 }
 
-.site-footer {
-    margin-top: 100px;
-    margin-bottom: 0px;
-    text-align: center; /* Center footer text */
-    padding: 20px; /* Add some padding to footer */
-    background-color: var(--footer-bg); /* Use defined footer background */
-    color: var(--footer-text); /* Use defined footer text color */
+.site-footer{
+  margin-top:100px;
+  margin-bottom:0px;
 }
 
 /* -------------------------------------------------------------------------- */
