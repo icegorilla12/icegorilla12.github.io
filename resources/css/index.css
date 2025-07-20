@@ -247,7 +247,7 @@ a:visited {
 @media (min-width: 1200px) {
     .main-content-area {
         max-width: 1000px; /* Slightly wider content on very large screens */
-        padding: 20px 100px;
+        padding: 20px 100px;    
     }
     .main-header {
         padding: 30px 150px; /* More padding on very large screens */
@@ -299,11 +299,6 @@ a:visited {
         margin-bottom: 15px; /* Space between title and nav */
         font-size: 22px;
     }
-    .main-nav {
-        width: 100%; /* Make nav take full width */
-        justify-content: space-around; /* Distribute items evenly */
-        gap: 20px; /* Reduce gap between menu items */
-    }
     .menu-item {
         font-size: 16px;
     }
@@ -352,11 +347,6 @@ a:visited {
     .main-header {
         padding: 15px 15px;
         width: calc(100% - 30px);
-    }
-    .main-nav {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center stacked items */
-        gap: 10px;
     }
     .menu-item {
         width: 100%;
