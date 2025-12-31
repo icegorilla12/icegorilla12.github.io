@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atharva Shukla - My Thoughts at 23</title>
+        <link rel="stylesheet" href="../resources/css/index.css">
+        <link rel="stylesheet" href="../resources/css/blog.css">
+        <link rel="stylesheet" href="../resources/css/blog-post.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+            // MathJax configuration (before loading MathJax itself)
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']], // Define inline delimiters
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']], // Define display delimiters
+                    processEscapes: true, // Allow escaping of dollar signs, e.g., \$
+                    tags: 'ams' // Optional: for equation numbering if using amsmath
+                },
+                options: {
+                    ignoreHtmlClass: 'tex2jax_ignore', // Ignore elements with this class
+                    processHtmlClass: 'tex2jax_process' // Only process elements with this class
+                },
+                svg: {
+                    fontCache: 'global'
+                }
+            };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+      </head>
+    <body>
+        <header class="main-header">
+            <div class="site-title">
+                <p><a href="../index.html">Atharva Shukla</a></p>
+            </div>
+            <nav class="main-nav">
+                <div class="menu-item">
+                    <p><a href="../blog.html">Blog</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="../publications.html">Publications</a></p>
+                </div>
+                <div class="menu-item">
+                    <p><a href="../contact.html">Contact</a></p>
+                </div>
+                <div class="menu-item">
+                  <p><a href="../interests.html"> More </a></p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content-area blog-post-page">
+            <article class="blog-post-full">
+                <h1 class="blog-post-full-title" id="post-title">My Thoughts at 23</h1>
+                <p class="blog-post-full-meta">
+                    <span class="post-date">May 23, 2023</span> | <span class="post-category">Personal</span> 
+                </p>
+
+                <div class="post-content tex2jax_process" id="markdown-content-area">
+                    Loading blog post content...
+                </div>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="currentYear"></span> Atharva Shukla. All rights reserved.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+        <script>
+
+
+            // Function to fetch and render Markdown
+            async function loadMarkdownContent(markdownFilePath) {
+                try {
+                    const response = await fetch(markdownFilePath);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const markdownText = await response.text();
+
+                    // Convert Markdown to HTML
+                    const htmlContent = marked.parse(markdownText);
+
+                    // Insert into the content area
+                    const contentArea = document.getElementById('markdown-content-area');
+                    contentArea.innerHTML = htmlContent;
+
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                    }
+
+                } catch (error) {
+                    console.error("Error loading or parsing Markdown:", error);
+                    document.getElementById('markdown-content-area').innerHTML = "<p style='color: red;'>Failed to load blog post. Please try again later.</p>";
+                    document.getElementById('post-title').textContent = "Error Loading Post";
+                }
+            }
+
+            // Call the function with your Markdown file path
+            // Adjust this path relative to the HTML file (e.g., ../blog/posts/exploring-quantum-entanglement.md)
+            loadMarkdownContent('./2023-05-23-my-thoughts-at-23.md');
+
+        </script>
+    </body>
+</html>
